@@ -1,11 +1,11 @@
 import { copyFile, mkdir, writeFile } from "fs/promises";
 import { TokenConfig } from "./modules/token-config";
 import path from "path";
-import config from "../config.json";
+import config from "./config.json";
 
 const build = async (env: string) => {
-  const outputPath = path.join(__dirname, "..", config.outputDir);
-  const configPath = path.join(__dirname, "../tokens");
+  const outputPath = path.join(__dirname, config.outputDir);
+  const configPath = path.join(__dirname, config.tokenDir);
   const logoPath = path.join(outputPath, config.logoDir);
 
   // load tokens
