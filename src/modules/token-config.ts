@@ -1,6 +1,7 @@
 import { readFile, readdir } from "fs/promises";
 import path from "path";
 import { plainToInstance } from "class-transformer";
+import * as hasha from "hasha";
 
 export interface ISocialUrl {
   twitter: string;
@@ -30,6 +31,8 @@ export class TokenConfig {
 
   socialUrl: ISocialUrl;
 
+  networkType: string;
+
   public static async loadFromFolder(
     configPath: string,
     env = "testnet"
@@ -50,11 +53,22 @@ export class TokenConfig {
 
     const configurations: TokenConfig[] = [];
     for (const id in tokens) {
+      const address = tokens[id];
+
+      // calculate icon file name
+      const icon = `${hasha.fromFileSync(
+        path.join(configPath, env, tokens[id], "token.png"),
+        {
+          algorithm: "sha1",
+        }
+      )}.png`;
+
       configurations.push(
         plainToInstance(TokenConfig, {
           ...JSON.parse(filesData[id].toString()),
-          address: tokens[id],
-          icon: path.join(configPath, env, tokens[id], "token.png"),
+          address,
+          icon,
+          networkType: env,
         })
       );
     }
