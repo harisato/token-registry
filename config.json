@@ -1,5 +1,5 @@
 {
   "outputDir": "dist",
-  "logoDir": "logo",
+  "iconDir": "images",
   "tokenDir": "tokens"
 }

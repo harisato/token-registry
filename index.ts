@@ -6,7 +6,7 @@ import config from "./config.json";
 const build = async (env: string) => {
   const outputPath = path.join(__dirname, config.outputDir);
   const configPath = path.join(__dirname, config.tokenDir);
-  const logoPath = path.join(outputPath, config.logoDir);
+  const logoPath = path.join(outputPath, config.iconDir);
 
   // load tokens
   const tokens = await TokenConfig.loadFromFolder(configPath, env);
