@@ -32,8 +32,6 @@ export class TokenConfig {
 
   socialUrl: ISocialUrl;
 
-  networkType: string;
-
   public static async loadFromFolder(
     configPath: string,
     env = "testnet"
@@ -73,7 +71,6 @@ export class TokenConfig {
           ...JSON.parse(filesData[id].toString()),
           address,
           icon,
-          networkType: env,
         })
       );
     }

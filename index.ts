@@ -20,12 +20,7 @@ const build = async (env: string) => {
   await Promise.all(
     tokens.map((token) => {
       // source path
-      const source = path.join(
-        configPath,
-        token.networkType,
-        token.address,
-        "token.png"
-      );
+      const source = path.join(configPath, env, token.address, "token.png");
 
       // dest path
       const dest = path.join(logoPath, token.icon);
