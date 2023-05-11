@@ -2,8 +2,8 @@
   "name": "token-registry",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:harisato/token-registry.git",
-  "author": "harisato <pp.quochai@gmail.com>",
+  "repository": "git@github.com:aura-nw/token-registry.git",
+  "author": "aura-nw",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf ./dist",
