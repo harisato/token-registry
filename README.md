@@ -4,7 +4,7 @@
 
 - Fork a repository
 - Create a folder in `tokens/${env}/${contract_address}`
-- This folder require 2 files:
+- This folder requires 2 files:
 
   - `info.json`
 
@@ -27,20 +27,20 @@
 
   - `token.png`: Must be `png`, `transparent-background` and `256 x 256px`
 
-- Submit [new Pull Request](https://github.com/harisato/token-registry/pulls)
+- Submit [a new Pull Request](https://github.com/aura-nw/token-registry/pulls)
 
 ## How to use
 
 ### 1. Get tokens config
 
-- [Mainnet](https://harisato.github.io/token-registry/mainnet.json)
+- [Mainnet](https://aura-nw.github.io/token-registry/mainnet.json)
 
-  `https://harisato.github.io/token-registry/mainnet.json`
+  `https://aura-nw.github.io/token-registry/mainnet.json`
 
-- [Testnet](https://harisato.github.io/token-registry/testnet.json)
+- [Testnet](https://aura-nw.github.io/token-registry/testnet.json)
 
-  `https://harisato.github.io/token-registry/testnet.json`
+  `https://aura-nw.github.io/token-registry/testnet.json`
 
-### 2. Get token icon
+### 2. Get the token icon
 
-  `https://harisato.github.io/token-registry/images/${token.icon}`
+  `https://aura-nw.github.io/token-registry/images/${token.icon}`
