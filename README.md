@@ -3,7 +3,7 @@
 ## Submit token
 
 - Fork a repository
-- Create a folder in `tokens/${env}/${contract_address}`
+- Create a folder named `${contract_addresss}` in `tokens/${env}/`
 - This folder requires 2 files:
 
   - `info.json`
