@@ -41,6 +41,6 @@
 
   `https://harisato.github.io/token-registry/testnet.json`
 
-### 2. Get token
+### 2. Get token icon
 
-  `https://harisato.github.io/token-registry/images/${token.icon}.json`
+  `https://harisato.github.io/token-registry/images/${token.icon}`
