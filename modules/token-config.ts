@@ -2,7 +2,6 @@ import { copyFile, readFile, readdir } from "fs/promises";
 import path from "path";
 import * as hasha from "hasha";
 import { existsSync } from "fs";
-import { Token } from "./Token";
 import { IToken } from "./interfaces/itoken";
 
 export class TokenConfig<T> {

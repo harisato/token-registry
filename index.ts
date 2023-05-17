@@ -1,13 +1,9 @@
-import { copyFile, mkdir, writeFile } from "fs/promises";
-import {
-  TokenConfig,
-  copyImageToDist,
-  loadFromFolder,
-} from "./modules/token-config";
+import { mkdir, writeFile } from "fs/promises";
+import { copyImageToDist, loadFromFolder } from "./modules/token-config";
 import path from "path";
 import config from "./config.json";
 import { IbcToken } from "./modules/IBC-token";
-import { instanceToInstance, plainToInstance } from "class-transformer";
+import { plainToInstance } from "class-transformer";
 import { CW20Token } from "./modules/CW20-token";
 
 const build = async (network: string) => {
@@ -15,17 +11,12 @@ const build = async (network: string) => {
   const configPath = path.join(__dirname, config.tokenDir);
   const logoPath = path.join(outputPath, config.iconDir);
 
-  // load tokens
-  // const result = await Promise.all(config.tokenTypes.map((tokenType) =>
-  //   TokenConfig.loadFromFolder(configPath, tokenType, network)
-  // ));
-
   const result = await Promise.all([
     loadFromFolder(configPath, "ibc", network),
     loadFromFolder(configPath, "cw20", network),
   ]);
 
-  const ibcTokens = plainToInstance(CW20Token, result[0], {
+  const ibcTokens = plainToInstance(IbcToken, result[0], {
     excludeExtraneousValues: true,
     exposeUnsetFields: false,
   });
@@ -38,8 +29,6 @@ const build = async (network: string) => {
     ibc: ibcTokens,
     cw20: cw20Tokens,
   };
-
-  console.log(cw20Tokens);
 
   // Create dist folder
   await Promise.all([
